@@ -1,0 +1,21 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    --color-bg: #444340;
+    --color-main: #15b6b8;
+    --color-text-main: #444340;
+    --font-sans: 'Source Sans Pro Light', 'Source Sans Pro', sans-serif;
+
+    background-color: var(--color-bg);
+    font-family: var(--font-sans);
+}
+
+#svelte {
+    height: 100%;
+}
