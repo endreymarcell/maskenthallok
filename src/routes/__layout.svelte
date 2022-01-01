@@ -3,15 +3,15 @@
     import Hero from '$lib/Hero.svelte';
     import Navbar from '$lib/Navbar.svelte';
     import Footer from '$lib/Footer.svelte';
-    import TitleImage from '$lib/TitleImage.svelte';
 </script>
 
 <div id="background">
     <div id="main-column">
         <Hero />
         <Navbar />
-        <TitleImage />
-        <slot />
+        <main>
+            <slot />
+        </main>
         <Footer />
     </div>
 </div>
@@ -20,6 +20,7 @@
     #background {
         background-color: var(--color-bg);
         text-align: center;
+        height: 100%;
     }
 
     #main-column {
@@ -28,5 +29,12 @@
         max-width: 1200px;
         margin: 0 auto;
         background-color: white;
+        display: grid;
+        grid-template-rows: 250px 50px auto 150px;
+    }
+
+    main {
+        padding: 2rem;
+        text-align: start;
     }
 </style>

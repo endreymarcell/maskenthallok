@@ -6,7 +6,7 @@
     <div id="link-icons-container">
         <LinkIcons />
     </div>
-    <div id="footer-text">Másként Hallók Történeti Kutatócsoportja</div>
+    <div id="footer-text">Máskénthallók Történeti Kutatócsoportja</div>
 </footer>
 
 <style>
@@ -22,6 +22,6 @@
     }
 
     #footer-text {
-        color: grey;
+        color: #a29f9f;
     }
 </style>
