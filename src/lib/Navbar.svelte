@@ -1,9 +1,9 @@
 <nav>
-    <span class="nav-item">Rólunk</span>
-    <span class="nav-item">Tagok</span>
-    <span class="nav-item">Kutatási eredmények</span>
-    <span class="nav-item">Kapcsolat</span>
-    <span class="nav-item">English version</span>
+    <span class="nav-item"><a href="rolunk">Rólunk</a></span>
+    <span class="nav-item"><a href="tagok">Tagok</a></span>
+    <span class="nav-item"><a href="kutatasi-eredmenyek">Kutatási eredmények</a></span>
+    <span class="nav-item"><a href="kapcsolat">Kapcsolat</a></span>
+    <span class="nav-item"><a href="english">English version</a></span>
 </nav>
 
 <style>
@@ -25,5 +25,14 @@
     .nav-item:not(:first-child)::before {
         content: ' \2022';
         margin-right: 1rem;
+    }
+
+    .nav-item a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .nav-item a:hover {
+        border-bottom: 1px solid white;
     }
 </style>
