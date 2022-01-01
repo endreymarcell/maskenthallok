@@ -11,9 +11,10 @@ body {
     --color-main: #15b6b8;
     --color-text-main: #444340;
     --font-sans: 'Source Sans Pro Light', 'Source Sans Pro', sans-serif;
+    --font-main: 'Noto Sans Display', sans-serif;
 
     background-color: var(--color-bg);
-    font-family: var(--font-sans);
+    font-family: var(--font-main);
 }
 
 #svelte {
