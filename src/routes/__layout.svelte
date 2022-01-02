@@ -5,6 +5,10 @@
     import Footer from '$lib/Footer.svelte';
 </script>
 
+<svelte:head>
+    <title>Máskénthallók Történeti Kutatócsoportja</title>
+</svelte:head>
+
 <div id="background">
     <div id="main-column">
         <Hero />
