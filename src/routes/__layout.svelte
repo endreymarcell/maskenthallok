@@ -1,8 +1,8 @@
 <script>
     import '../global.css';
-    import Hero from '$lib/Hero.svelte';
-    import Navbar from '$lib/Navbar.svelte';
-    import Footer from '$lib/Footer.svelte';
+    import Hero from '$lib/components/Hero.svelte';
+    import Navbar from '$lib/components/Navbar.svelte';
+    import Footer from '$lib/components/Footer.svelte';
 </script>
 
 <svelte:head>

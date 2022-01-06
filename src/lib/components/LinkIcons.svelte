@@ -1,7 +1,7 @@
 <script lang="ts">
-    import FacebookIcon from '$lib/icons/FacebookIcon.svelte';
-    import EmailIcon from '$lib/icons/EmailIcon.svelte';
-    import TwitterIcon from '$lib/icons/TwitterIcon.svelte';
+    import FacebookIcon from '$lib/components/icons/FacebookIcon.svelte';
+    import EmailIcon from '$lib/components/icons/EmailIcon.svelte';
+    import TwitterIcon from '$lib/components/icons/TwitterIcon.svelte';
 </script>
 
 <div id="link-icons">

@@ -1,5 +1,5 @@
 <script>
-    import LinkIcons from '$lib/LinkIcons.svelte';
+    import LinkIcons from '$lib/components/LinkIcons.svelte';
 </script>
 
 <footer>
