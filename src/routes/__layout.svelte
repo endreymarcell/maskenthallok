@@ -1,8 +1,26 @@
-<script>
+<script lang="ts" context="module">
+    import type { Load } from '@sveltejs/kit';
+    import { loadPagesMeta } from '$lib/api';
+    export const load: Load = async ({ fetch, page }) => {
+        const pagesMeta = await loadPagesMeta(fetch);
+        return {
+            props: {
+                pagesMeta,
+                activePageUrl: page.params.slug,
+            },
+        };
+    };
+</script>
+
+<script lang="ts">
     import '../global.css';
     import Hero from '$lib/components/Hero.svelte';
     import Navbar from '$lib/components/Navbar.svelte';
     import Footer from '$lib/components/Footer.svelte';
+    import type { PageMeta } from '$lib/api';
+
+    export let pagesMeta: PageMeta[];
+    export let activePageUrl: string;
 </script>
 
 <svelte:head>
@@ -12,7 +30,7 @@
 <div id="background">
     <div id="main-column">
         <Hero />
-        <Navbar />
+        <Navbar {pagesMeta} {activePageUrl} />
         <main>
             <slot />
         </main>

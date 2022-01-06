@@ -1,9 +1,16 @@
+<script lang="ts">
+    import type { PageMeta } from '$lib/api';
+
+    export let pagesMeta: PageMeta[];
+    export let activePageUrl: string;
+</script>
+
 <nav>
-    <span class="nav-item"><a href="rolunk">Rólunk</a></span>
-    <span class="nav-item"><a href="tagok">Tagok</a></span>
-    <span class="nav-item"><a href="kutatasi-eredmenyek">Kutatási eredmények</a></span>
-    <span class="nav-item"><a href="kapcsolat">Kapcsolat</a></span>
-    <span class="nav-item"><a href="english">English version</a></span>
+    {#each pagesMeta as pageMeta (pageMeta.url)}
+        <span class="nav-item" class:active={activePageUrl === pageMeta.url}>
+            <a href={pageMeta.url}>{pageMeta.title}</a>
+        </span>
+    {/each}
 </nav>
 
 <style>
@@ -19,20 +26,25 @@
 
     .nav-item {
         text-transform: uppercase;
-        color: white;
+        --color: white;
+    }
+
+    .nav-item.active {
+        --color: #b1e2e2;
     }
 
     .nav-item:not(:first-child)::before {
         content: ' \2022';
         margin-right: 1rem;
+        color: #b1e2e2;
     }
 
     .nav-item a {
-        color: white;
+        color: var(--color);
         text-decoration: none;
     }
 
     .nav-item a:hover {
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid var(--color);
     }
 </style>
