@@ -1,23 +1,25 @@
 <script lang="ts" context="module">
     import type { Load } from '@sveltejs/kit';
-    import { loadPageContent, loadPagesMeta } from '$lib/api';
+    import { loadPageContent } from '$lib/api';
     export const load: Load = async ({ fetch, page }) => {
-        const pages = await loadPagesMeta(fetch);
         const pageContent = await loadPageContent(fetch, 'rolunk');
         return {
             props: {
-                pages,
-                pageContent,
+                title: pageContent.title,
+                content: pageContent.content,
             },
         };
     };
 </script>
 
 <script lang="ts">
-    import type { Page, PageMeta } from '$lib/api';
+    import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
-    export let pages: PageMeta[];
-    export let pageContent: Page;
+    export let title: string;
+    export let content: any;
 </script>
 
-parsed pages: {JSON.stringify(pageContent)}
+<h1>{title}</h1>
+<div>
+    {@html documentToHtmlString(content)}
+</div>
