@@ -1,5 +1,3 @@
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-
 const urlBase = `https://graphql.contentful.com/content/v1/`;
 const spaceId = import.meta.env.VITE_MASKENTHALLOK_CONTENTFUL_SPACE_ID;
 const environmentId = import.meta.env.VITE_MASKENTHALLOK_CONTENTFUL_ENV_ID;
