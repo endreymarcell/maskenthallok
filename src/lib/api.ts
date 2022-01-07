@@ -15,15 +15,19 @@ export type Page = PageMeta & { content: string };
 
 export async function loadPagesMeta(fetch: Function): Promise<PageMeta[]> {
     const query = `query {
-      pageCollection {
+      orderCollection(limit: 1) {
         items {
-          title
-          url
+          pagesInNavbarCollection {
+            items {
+              title
+              url
+            }
+          }
         }
       }
     }`;
     const content = (await fetchContent(query, fetch)) as any;
-    return content.pageCollection.items as PageMeta[];
+    return content.orderCollection.items[0].pagesInNavbarCollection.items;
 }
 
 export async function loadPageContent(fetch: Function, url: string): Promise<Page> {
