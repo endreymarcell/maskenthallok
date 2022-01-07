@@ -20,7 +20,7 @@
     import type { PageMeta } from '$lib/api';
 
     export let pagesMeta: PageMeta[];
-    export let activePageUrl: string;
+    export let activePageUrl: string = 'rolunk';
 </script>
 
 <svelte:head>
