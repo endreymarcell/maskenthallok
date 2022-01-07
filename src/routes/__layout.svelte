@@ -52,7 +52,7 @@
         margin: 0 auto;
         background-color: white;
         display: grid;
-        grid-template-rows: 250px 50px auto 150px;
+        grid-template-rows: 220px 50px auto 150px;
     }
 
     main {

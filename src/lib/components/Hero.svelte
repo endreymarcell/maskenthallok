@@ -11,11 +11,15 @@
 
 <style>
     header {
-        margin-top: -20px;
+        margin-top: 2rem;
     }
 
     a {
         color: black;
         text-decoration: none;
+    }
+
+    h1 {
+        color: #0b696b;
     }
 </style>
