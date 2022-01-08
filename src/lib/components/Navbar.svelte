@@ -1,27 +1,40 @@
 <script lang="ts">
     import type { PageMeta } from '$lib/api';
+    import Hamburger from '$lib/components/icons/Hamburger.svelte';
 
     export let pagesMeta: PageMeta[];
     export let activePageUrl: string;
+
+    let isOpen: false;
 </script>
 
-<nav>
-    {#each pagesMeta as pageMeta (pageMeta.url)}
-        <span class="nav-item" class:active={activePageUrl === pageMeta.url}>
+<nav class:collapsed={!isOpen}>
+    {#each pagesMeta as pageMeta, index (pageMeta.url)}
+        <div class="nav-item" class:active={activePageUrl === pageMeta.url}>
+            {#if index === 0}
+                <div id="hamburger-icon" on:click={() => (isOpen = !isOpen)}>
+                    <Hamburger {isOpen} />
+                </div>
+            {/if}
             <a href={pageMeta.url}>{pageMeta.title}</a>
-        </span>
+        </div>
     {/each}
 </nav>
 
 <style>
     nav {
         background-color: var(--color-main);
-        height: 3rem;
+        line-height: 3rem;
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 1rem;
         font-family: sans-serif;
+        transition: all 0.2s;
+    }
+
+    #hamburger-icon {
+        display: none;
     }
 
     .nav-item {
@@ -46,5 +59,41 @@
 
     .nav-item a:hover {
         border-bottom: 1px solid var(--color);
+    }
+
+    @media only screen and (max-width: 800px) {
+        nav {
+            flex-direction: column;
+            align-items: start;
+            justify-content: flex-start;
+            padding: 0.5rem 2rem;
+            height: 19rem;
+        }
+
+        nav.collapsed {
+            height: 3rem;
+            overflow: hidden;
+        }
+
+        #hamburger-icon {
+            display: flex;
+            margin-right: 1rem;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            font-size: 1.6rem;
+            margin-left: 2.5rem;
+        }
+
+        .nav-item.active {
+            --color: white;
+            margin-left: 0;
+        }
+
+        .nav-item::before {
+            content: '' !important;
+        }
     }
 </style>

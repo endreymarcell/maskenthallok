@@ -3,15 +3,31 @@
 </script>
 
 <header>
-    <a href="/">
-        <Logo />
-        <h1>Máskénthallók Történeti Kutatócsoportja</h1>
-    </a>
+    <div id="logo-container">
+        <a href="/">
+            <Logo />
+        </a>
+    </div>
+    <div id="title-container">
+        <a href="/">
+            <h1>Máskénthallók</h1>
+            <h1>Történeti</h1>
+            <h1>Kutatócsoportja</h1>
+        </a>
+    </div>
 </header>
 
 <style>
     header {
-        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 2rem;
     }
 
     a {
@@ -19,8 +35,32 @@
         text-decoration: none;
     }
 
+    #title-container a {
+        display: flex;
+        gap: 0.6rem;
+        justify-content: center;
+    }
+
     h1 {
         font-family: var(--font-title);
         color: #0b696b;
+    }
+
+    @media only screen and (max-width: 800px) {
+        header {
+            flex-direction: row;
+            margin-top: -1rem;
+        }
+
+        #title-container a {
+            flex-direction: column;
+            gap: 0;
+            justify-content: flex-start;
+        }
+
+        h1 {
+            margin: 0 0 1rem 0;
+            text-align: left;
+        }
     }
 </style>

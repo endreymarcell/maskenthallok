@@ -49,9 +49,8 @@
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
+        padding-top: 2rem;
         background-color: white;
-        display: grid;
-        grid-template-rows: 220px 50px auto 150px;
     }
 
     main {

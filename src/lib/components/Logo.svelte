@@ -19,9 +19,3 @@
         />
     </g>
 </svg>
-
-<style>
-    svg {
-        width: 300px;
-    }
-</style>
