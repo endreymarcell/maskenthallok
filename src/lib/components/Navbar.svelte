@@ -8,11 +8,11 @@
     let isOpen: false;
 </script>
 
-<nav class:collapsed={!isOpen}>
+<nav class:collapsed={!isOpen} on:click={() => (isOpen = !isOpen)}>
     {#each pagesMeta as pageMeta, index (pageMeta.url)}
         <div class="nav-item" class:active={activePageUrl === pageMeta.url}>
             {#if index === 0}
-                <div id="hamburger-icon" on:click={() => (isOpen = !isOpen)}>
+                <div id="hamburger-icon">
                     <Hamburger {isOpen} />
                 </div>
             {/if}
@@ -64,10 +64,11 @@
     @media only screen and (max-width: 800px) {
         nav {
             flex-direction: column;
+            gap: 0;
             align-items: start;
             justify-content: flex-start;
-            padding: 0.5rem 2rem;
-            height: 19rem;
+            padding: 0.5rem;
+            height: 15rem;
         }
 
         nav.collapsed {
@@ -83,7 +84,7 @@
         .nav-item {
             display: flex;
             align-items: center;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             margin-left: 2.5rem;
         }
 
@@ -94,6 +95,10 @@
 
         .nav-item::before {
             content: '' !important;
+        }
+
+        .nav-item a:hover {
+            border-bottom: none;
         }
     }
 </style>

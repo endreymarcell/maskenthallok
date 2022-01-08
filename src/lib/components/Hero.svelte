@@ -61,6 +61,13 @@
         h1 {
             margin: 0 0 1rem 0;
             text-align: left;
+            font-size: 1.6rem;
+            line-height: 1.4rem;
+        }
+
+        #logo-container {
+            padding: 0;
+            transform: scale(0.6);
         }
     }
 </style>
