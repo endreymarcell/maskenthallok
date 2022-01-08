@@ -13,13 +13,10 @@
 </script>
 
 <script lang="ts">
-    import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+    import Article from '$lib/components/Article.svelte';
 
     export let title: string;
     export let content: any;
 </script>
 
-<h1>{title}</h1>
-<div>
-    {@html documentToHtmlString(content)}
-</div>
+<Article {title} {content} />
