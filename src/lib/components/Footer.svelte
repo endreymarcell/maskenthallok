@@ -15,6 +15,9 @@
         padding: 2rem;
         color: white;
         text-transform: uppercase;
+        font-family: var(--font-sans);
+        letter-spacing: 1.2pt;
+        word-spacing: 4pt;
     }
 
     #link-icons-container {

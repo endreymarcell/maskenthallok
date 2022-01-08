@@ -10,13 +10,25 @@ body {
     --color-bg: #444340;
     --color-main: #15b6b8;
     --color-text-main: #444340;
-    --font-sans: 'Source Sans Pro Light', 'Source Sans Pro', sans-serif;
-    --font-main: 'Noto Sans Display', sans-serif;
+    --font-title: 'Source Sans Pro Light', 'Source Sans Pro', sans-serif;
+    --font-sans: 'Noto Sans Display', sans-serif;
+    --font-serif: 'Noto Serif', serif;
 
     background-color: var(--color-bg);
-    font-family: var(--font-main);
+    font-family: var(--font-serif);
 }
 
 #svelte {
     height: 100%;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+p {
+    font-family: var(--font-serif);
+    line-height: 1.9rem;
+    text-indent: 1rem;
+    font-size: 1.2rem;
 }

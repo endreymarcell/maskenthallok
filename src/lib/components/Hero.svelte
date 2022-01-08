@@ -20,6 +20,7 @@
     }
 
     h1 {
+        font-family: var(--font-title);
         color: #0b696b;
     }
 </style>
