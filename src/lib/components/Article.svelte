@@ -6,9 +6,9 @@
 </script>
 
 <h1>{title}</h1>
-<div>
+<article>
     {@html documentToHtmlString(content)}
-</div>
+</article>
 
 <style>
     h1 {
@@ -21,5 +21,22 @@
         h1 {
             display: none;
         }
+    }
+
+    :global(article > h2) {
+        margin-top: 3rem;
+    }
+
+    :global(article > h2, article > h3) {
+        padding-left: 1rem;
+    }
+
+    :global(article > h3:not(:first-child)) {
+        margin-top: 3rem;
+    }
+
+    :global(article > p) {
+        margin-block-start: 10px;
+        margin-block-end: 0;
     }
 </style>
