@@ -6,7 +6,6 @@
         return {
             props: {
                 pagesMeta,
-                activePageUrl: page.params.slug,
             },
         };
     };
@@ -18,9 +17,9 @@
     import Navbar from '$lib/components/Navbar.svelte';
     import Footer from '$lib/components/Footer.svelte';
     import type { PageMeta } from '$lib/api';
+    import { page } from '$app/stores';
 
     export let pagesMeta: PageMeta[];
-    export let activePageUrl: string = 'rolunk';
 </script>
 
 <svelte:head>
@@ -30,7 +29,7 @@
 <div id="background">
     <div id="main-column">
         <Hero />
-        <Navbar {pagesMeta} {activePageUrl} />
+        <Navbar {pagesMeta} activePageUrl={$page.params.slug || 'rolunk'} />
         <main>
             <slot />
         </main>
