@@ -1,6 +1,7 @@
 <script lang="ts">
     import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
+    export let slug: string;
     export let title: string;
     export let content: any;
 </script>

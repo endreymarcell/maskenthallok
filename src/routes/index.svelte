@@ -1,22 +1,15 @@
 <script lang="ts" context="module">
     import type { Load } from '@sveltejs/kit';
-    import { loadPageContent } from '$lib/api';
-    export const load: Load = async ({ fetch, page }) => {
-        const pageContent = await loadPageContent(fetch, 'rolunk');
-        return {
-            props: {
-                title: pageContent.title,
-                content: pageContent.content,
-            },
-        };
-    };
+    import { loadPage } from '$lib/helpers';
+    export const load: Load = async ({ fetch }) => loadPage(fetch, 'rolunk');
 </script>
 
 <script lang="ts">
-    import Article from '$lib/components/Article.svelte';
+    import ArticlePage from '$lib/pages/ArticlePage.svelte';
 
+    export let slug: string;
     export let title: string;
     export let content: any;
 </script>
 
-<Article {title} {content} />
+<ArticlePage {slug} {title} {content} />
