@@ -48,8 +48,10 @@
 
     @media only screen and (max-width: 800px) {
         header {
-            flex-direction: row;
+            flex-direction: row-reverse;
             margin-top: -1rem;
+            justify-content: space-between;
+            padding: 0 2rem;
         }
 
         #title-container a {
