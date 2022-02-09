@@ -6,7 +6,9 @@
     export let content: any;
 </script>
 
-<h1>{title}</h1>
+{#if slug !== 'fooldal'}
+    <h1>{title}</h1>
+{/if}
 <article>
     {@html documentToHtmlString(content)}
 </article>

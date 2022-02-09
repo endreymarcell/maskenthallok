@@ -2,7 +2,7 @@ import { loadPageContent, loadPagesMeta } from '$lib/api';
 
 export async function loadPage(fetch: Function, slug: string) {
     const pagesMeta = await loadPagesMeta(fetch);
-    const availableSlugs = pagesMeta.map((page) => page.url);
+    const availableSlugs = ['fooldal', ...pagesMeta.map((page) => page.url)];
     if (!availableSlugs.includes(slug)) {
         return {
             status: 404,

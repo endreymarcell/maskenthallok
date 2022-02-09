@@ -20,6 +20,7 @@
     import { page } from '$app/stores';
 
     export let pagesMeta: PageMeta[];
+    $: filteredPagesMeta = pagesMeta.filter((pageMeta) => pageMeta.url !== 'fooldal');
 </script>
 
 <svelte:head>
@@ -29,7 +30,7 @@
 <div id="background">
     <div id="main-column">
         <Hero />
-        <Navbar {pagesMeta} activePageUrl={$page.params.slug || 'rolunk'} />
+        <Navbar pagesMeta={filteredPagesMeta} activePageUrl={$page.params.slug} />
         <main>
             <slot />
         </main>

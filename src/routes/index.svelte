@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
     import type { Load } from '@sveltejs/kit';
     import { loadPage } from '$lib/helpers';
-    export const load: Load = async ({ fetch }) => loadPage(fetch, 'rolunk');
+    export const load: Load = async ({ fetch }) => loadPage(fetch, 'fooldal');
 </script>
 
 <script lang="ts">

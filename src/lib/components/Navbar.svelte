@@ -5,6 +5,11 @@
     export let pagesMeta: PageMeta[];
     export let activePageUrl: string;
 
+    $: activePageMeta =
+        activePageUrl === undefined
+            ? { url: 'fooldal', title: 'Főoldal' }
+            : pagesMeta.find((pageMeta) => pageMeta.url === activePageUrl);
+
     let isOpen: false;
 </script>
 
@@ -14,7 +19,7 @@
             <Hamburger {isOpen} />
         </div>
         <div id="hamburger-menu-title">
-            {isOpen ? 'Menü:' : pagesMeta.find((pageMeta) => pageMeta.url === activePageUrl).title}
+            {isOpen ? 'Menü:' : activePageMeta.title}
         </div>
     </div>
     {#each pagesMeta as pageMeta, index (pageMeta.url)}

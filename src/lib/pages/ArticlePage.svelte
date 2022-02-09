@@ -8,7 +8,7 @@
     $: imageSuffix = slug === 'english' ? '-en' : '-hu';
 </script>
 
-<Article {title} {content} />
+<Article {title} {slug} {content} />
 {#if slug === 'rolunk' || slug === 'english'}
     <div id="logo-container">
         <img src="/img/elte-logo{imageSuffix}.png" alt="ELTE Logo" />
