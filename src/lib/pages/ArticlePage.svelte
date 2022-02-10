@@ -9,7 +9,7 @@
 </script>
 
 <Article {title} {slug} {content} />
-{#if slug === 'rolunk' || slug === 'english'}
+{#if ['fooldal', 'rolunk', 'english'].includes(slug)}
     <div id="logo-container">
         <img src="/img/elte-logo{imageSuffix}.png" alt="ELTE Logo" />
         <img src="/img/atelier-logo{imageSuffix}.png" alt="Atelier Logo" />
