@@ -54,7 +54,7 @@
     }
 
     main {
-        padding: 2rem;
+        padding: 3rem 6rem;
         text-align: start;
     }
 </style>
