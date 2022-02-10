@@ -25,7 +25,7 @@ export async function loadPagesMeta(fetch: Function): Promise<PageMeta[]> {
       }
     }`;
     const content = (await fetchContent(query, fetch)) as any;
-    return content.orderCollection.items[0].pagesInNavbarCollection.items;
+    return content.orderCollection.items[0].pagesInNavbarCollection.items.filter((x) => x != null);
 }
 
 export async function loadPageContent(fetch: Function, url: string): Promise<Page> {
