@@ -57,4 +57,10 @@
         padding: 3rem 6rem;
         text-align: start;
     }
+
+    @media only screen and (max-width: 800px) {
+        main {
+            padding: 1rem;
+        }
+    }
 </style>
